@@ -1,0 +1,68 @@
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__arrow {
+  transition: 0.2s;
+  }
+
+  &__panel {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+    &__label {
+      color: black;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    &__controller {
+      display: flex;
+      cursor: pointer;
+      transition: 1s;
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    & > * {
+      position: relative;
+      padding-left: 32px;
+
+      &::before {
+        position: absolute;
+        top: -1.5px;
+        left: 7.5px;
+        width: 1px;
+        height: calc(100% + 12px);
+        background-color: #E3E3E3;
+        content: '';
+      }
+
+      &::after {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        width: 8px;
+        height: 1px;
+        background-color: #E3E3E3;
+        content: "";
+      }
+
+      &:last-child {
+        &::before {
+          height: 10px;
+        }
+      }
+    }
+
+
+  }
+}
+

@@ -1,0 +1,62 @@
+.a-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background: #0000009e;
+  align-items: center;
+  z-index: 1005;
+  $self: &;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.25s ease;
+
+  @media screen and (min-width: 1025px){
+    transform: scale(1.1);
+    &.active {
+      visibility: visible;
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  @media screen and (max-width: 1025px){
+    align-items: flex-end;
+    &.active {
+      visibility: visible;
+      opacity: 1;
+      #{ $self }__content {
+        transform: translateY(0)
+      }
+    }
+  }
+
+  &__content {
+    background: #fff;
+    box-shadow: -10px 10px 20px rgba(24, 24, 24, 0.24);
+    border-radius: 4px;
+    width: 100%;
+    height: fit-content;
+    margin: 16px;
+    max-width: var(--max-width);
+
+    @media screen and (max-width: 1025px){
+      max-width: 100%;
+      transition: 0.25s ease;
+      margin: 0;
+      border-radius: 20px 20px 0 0;
+      transform: translateY(100%);
+    }
+  }
+}
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}

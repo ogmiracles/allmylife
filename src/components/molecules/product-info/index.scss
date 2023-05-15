@@ -1,0 +1,40 @@
+.card-title {
+    text-align: center;
+    padding-right: 40px;
+}
+.card-container{
+    margin-top: 20px;
+    display: flex;
+    max-width: 500px;
+	
+}
+.product-container{
+	font-weight: 600;
+	font-size: 26px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+
+}
+.product-info__color{
+	color: hsl(208, 8%, 59%);
+	span {
+		color:#464c53;
+	}
+}
+.product-info__price{
+	color:#464c53;
+
+}
+.product-info__memo{
+	color: hsl(208, 8%, 59%);
+	span {
+		color:#464c53;
+	}
+}
+.product-info__button{
+	width: 100%;
+
+}
+

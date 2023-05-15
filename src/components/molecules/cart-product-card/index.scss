@@ -1,0 +1,56 @@
+.product-card-cart {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  max-width: 800px;
+  padding: 20px;
+
+  .cart-left {
+    display: flex;
+    gap: 12px;
+
+    &__image {
+      max-width: 100px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &__title {
+        font-weight: 600;
+        font-size: 18px;
+      }
+
+      &__count {
+        display: flex;
+      }
+    }
+  }
+
+  .cart-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .sum {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      .discount {
+        display: flex;
+        gap: 8px;
+      }
+    }
+
+    .delete {
+      display: flex;
+    }
+  }
+}
