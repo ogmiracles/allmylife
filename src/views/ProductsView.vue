@@ -35,6 +35,7 @@ const submitFilterParams = () => {
 }
 
 
+
 const isOpen = ref(false)
 const activeProduct = ref({})
 const openMoreModal = (product) => {
@@ -56,7 +57,6 @@ const closeOpenModal = () => {
             <h4>{{ activeProduct.title }}</h4>
         </div>
     </a-dialog>
-    <h1>Products</h1>
     <div class="container">
         <div class="product-page">
             <div class="product-page__filter">
@@ -82,9 +82,11 @@ const closeOpenModal = () => {
                     <product-card v-for="product in data?.results" :product="product" :key="product.id" @more="openMoreModal"/>
                 </div>
                 <pagination-button :total-page="totalPages" v-model="page"/>
+
             </div>
         </div>
     </div>
+    
 
 </template>
 

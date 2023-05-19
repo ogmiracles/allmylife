@@ -22,13 +22,9 @@ onMounted(async () => {
     <product-info :product="product">
         </product-info>
     <div class="card-body">
-        <p class="card-text">{{ product.price }}</p>
-    </div>
-    <div>
-        <h1>Product</h1>
     </div>
     <div class="product-title" v-if="isLoaded">
-        <p>{{ product.title }}</p>
+        <h4>Abundance</h4>
     </div>
     <div v-else>
         ...loading

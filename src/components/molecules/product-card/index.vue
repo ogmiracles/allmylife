@@ -24,7 +24,7 @@
 
             </div>
             <div class="manipulation">
-                <base-button min-width="170px" @click="toggle(product)" variant="white">{{isExist ? "Удалить из корзины" : 'Добвить в корзину'}}</base-button>
+                <base-button min-width="170px" @click="toggle(product)" variant="white">{{isExist ? "Удалить из корзины" : 'Добавить в корзину'}}</base-button>
                 <router-link :to="`products/${product.id}`">
                     <base-button min-width="170px" variant="black">Узнать больше</base-button>
                 </router-link>

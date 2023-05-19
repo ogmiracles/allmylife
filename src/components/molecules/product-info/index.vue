@@ -12,8 +12,9 @@
         <div class="product-info__memo">Память: <span>64GB</span></div>
         <div class="product-info__price">{{ product.price }} ₸</div>
         </div>
-
-        <base-button class="product-info__button">В корзину</base-button>
+        <router-link to="/wishlist">
+        <base-button class="product-info__button">В избранные</base-button>
+        </router-link>
         </div>
         
     </div>
