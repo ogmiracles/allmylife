@@ -56,67 +56,161 @@ import {useRoute} from "vue-router";
       
     </section>
 
-    <div class="album py-5 bg-body-tertiary">
-      <div class="container">
-
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-          <div class="col">
-            <div class="card shadow-sm">
-             <img src="https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-silver-220907_inline.jpg.large.jpg">
-              <div class="card-body">
-                <p class="card-text">Iphone 14</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <router-link to="/products">
-                    <button type="button" class="btn btn-sm btn-outline-success">Купить</button>
-                    <button type="button" class="btn btn-sm btn-primary">Подробнее</button>
-                    </router-link>
-                  </div>
-                  <small class="text-body-secondary">Abundance</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card shadow-sm">
-             <img src="https://www.apple.com/newsroom/images/product/iphone/geo/Apple_iphone13_hero_geo_09142021_inline.jpg.large.jpg">
-              <div class="card-body">
-                <p class="card-text">Iphone 13</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <router-link to="/products">
-                    <button type="button" class="btn btn-sm btn-outline-success">Купить</button>
-                    <button type="button" class="btn btn-sm btn-primary">Подробнее</button>
-                    </router-link>
-                  </div>
-                  <small class="text-body-secondary">Abundance</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card shadow-sm">
-              <img src="https://www.apple.com/newsroom/images/product/iphone/geo/apple_iphone-12_2-up_geo_10132020_inline.jpg.large.jpg">
-              <div class="card-body">
-                <p class="card-text">Iphone 12</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <router-link to="/products">
-                    <button type="button" class="btn btn-sm btn-outline-success">Купить</button>
-                    <button type="button" class="btn btn-sm btn-primary">Подробнее</button>
-                    </router-link>
-                  </div>
-                  <small class="text-body-secondary">Abundance</small>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    <section class="main-content"> 
+    <div class="container"> 
+      <div class="row"> 
+        <div class="col-lg-4 .col-sm-6"> 
+          <RouterLink :to="'products/' + 9" class="active" href="#"> 
+          <div class="product-card"> 
+            <div class="product-thumb"> 
+              <img src="https://shop.kz/upload/iblock/376/152392_1.jpg">
+            </div> 
+            <div class="product-details"> 
+              <h4><a href="#">iPhone 12 Pro</a></h4> 
+              <p>Модель iPhone 12 Pro; Операционная система iOS; Диагональ экрана (дюйм); 6.1</p> 
+            </div> 
+            <div class="product-bottom-details"> 
+              <div class="product-price"> 
+                <small>589 990тг.</small>  454 000тг. 
+              </div> 
+            </div> 
+          </div> 
+          </RouterLink> 
+        </div> 
+         
+         
+        <div class="col-lg-4 .col-sm-6"> 
+          <RouterLink :to="'products/' + 5" class="active" href="#"> 
+          <div class="product-card"> 
+            <div class="product-thumb"> 
+             <img src="https://static.shop.kz/upload/resize_cache/iblock/6be/ssh2naxd3k5ztl7myvjmu8fwthiwhqh1/450_450_1/00000167444_1234.jpg">
+            </div> 
+            <div class="product-details"> 
+              <h4><a href="#">Samsung Galaxy S22 Ultra</a></h4> 
+              <p>Модельный год 2022; Диагональ дисплея, дюйм 6.8; Разрешение дисплея 1440x3080</p> 
+            </div> 
+            <div class="product-bottom-details"> 
+              <div class="product-price"> 
+                <small>631 990тг.</small>  549 000тг. 
+              </div> 
+            </div> 
+          </div> 
+          </RouterLink> 
+        </div>  
+         
+         
+        <div class="col-lg-4 .col-sm-6"> 
+          <RouterLink :to="'products/' + 12" class="active" href="#"> 
+          <div class="product-card">  
+            <div class="product-thumb"> 
+              <img src="https://object.pscloud.io/cms/cms/Photo/img_0_77_3947_0_1.webp">
+            </div> 
+            <div class="product-details"> 
+              <h4><a href="#">Xiaomi Redmi Note 10 Pro</a></h4> 
+              <p>Размер экрана, дюйм 6.67; Тип матрицы AMOLED; Объем оперативной памяти 8 ГБ</p> 
+            </div> 
+            <div class="product-bottom-details"> 
+              <div class="product-price"> 
+                <small>164 990тг.</small>  139 900тг. 
+              </div> 
+         
+            </div> 
+          </div> 
+          </RouterLink> 
+        </div>         
+      </div> 
+    </div> 
+     
+  </section>
   </main>
 </template>
 
 <style>
+.main { 
+  height: 100vh; 
+} 
+ 
+.my-carousel { 
+  padding: 0 
+} 
+ 
+.my-carousel .carousel-item { 
+  display: flex; 
+  max-height: 600px; 
+} 
+.my-carousel .carousel-item img { 
+  object-fit: cover; 
+} 
+ 
+.main-content { 
+  padding-top: 50px; 
+  padding-bottom: 50px; 
+} 
+ 
+.product-card { 
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06); 
+  transition: all .3s; 
+} 
+ 
+.product-card:hover { 
+  box-shadow: 0 14px 30px -15px rgba(0, 0, 0, 0.75); 
+} 
+ 
+.product-thumb a { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  height: 200px; 
+  padding: 20px; 
+} 
+ 
+.product-thumb img { 
+  max-width: 100%; 
+  max-height: 100%; 
+} 
+ 
+.product-details { 
+  padding: 20px; 
+} 
+ 
+.product-details h4 a { 
+  font-weight: 500; 
+  display: block; 
+  height: 60px; 
+  overflow: hidden; 
+  text-decoration: none; 
+} 
+ 
+.product-details p { 
+  font-size: 15px; 
+  margin-bottom: 20px; 
+  color: #999; 
+  height: 44px; 
+  overflow: hidden; 
+} 
+ 
+.product-bottom-details { 
+  overflow: hidden; 
+  border-top: 1px solid #eee; 
+  padding-top: 20px; 
+} 
+ 
+.product-price { 
+  font-size: 18px; 
+  color: #ee6e73; 
+  font-weight: 600; 
+   
+} 
+ 
+.product-price small { 
+  color: #ccc; 
+  font-weight: 400; 
+  text-decoration: line-through; 
+  margin-right: 5px; 
+ 
+} 
+ 
+.active { 
+  text-decoration: none; 
+}
 </style>

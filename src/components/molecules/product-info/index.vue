@@ -12,8 +12,10 @@
         <div class="product-info__memo">Память: <span>64GB</span></div>
         <div class="product-info__price">{{ product.price }} ₸</div>
         </div>
+        
         <router-link to="/wishlist">
-        <base-button class="product-info__button">В избранные</base-button>
+        <base-button class="product-info__button" @click="addToWishlist">В избранные</base-button>
+    
         </router-link>
         </div>
         
@@ -21,6 +23,7 @@
 </template>
 
 <script>
+
 export default {
     name: "ProductInfo",
 
@@ -28,20 +31,28 @@ export default {
 </script>
 <script setup>
 import { ref, computed, watch, onMounted } from 'vue';
+import axios from 'axios'
 import BaseButton from "@/components/atoms/base-button/index.vue";
 
 
-defineProps({
+const props = defineProps({
     product: {
         type: Object,
 
     }
 })
-
-
-
-
-
+const addToWishlist = async () => {
+    // console.log(props.product)
+    const response = await axios.post("http://localhost:8000/api/wishlist/", {
+        "product_id": props.product.id
+    },
+    { 
+            headers: { 
+                Authorization: `Bearer ${localStorage.getItem('access_token')}`
+            } 
+        } )
+    console.log(response)
+}
 
 
 </script>

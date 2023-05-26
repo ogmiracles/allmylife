@@ -15,6 +15,7 @@
                 </div>
             </div>
         </div>
+        
         <div class="cart-right">
             <div class="sum">
                 <div class="total-sum">

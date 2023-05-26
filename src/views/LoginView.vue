@@ -6,11 +6,14 @@ const user = ref({
   password: ''
 })
 
-const loging = async () => {
+const loging = async (event) => {
+  event.preventDefault()
+  console.log("log in", user.value.email, user.value.password) 
   const response = await axios.post('http://localhost:8000/api/login/', {
     email: user.value.email,
     password: user.value.password
   })
+  console.log(response.data)
   localStorage.setItem('access_token', response.data.access)
   localStorage.setItem('refresh_token', response.data.refresh)
   // this.$router.push('/')
@@ -83,11 +86,11 @@ const loging = async () => {
 </svg></h1>
 
     <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" v-model="user.email">
       <label for="floatingInput">Email address</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" v-model="user.password">
       <label for="floatingPassword">Password</label>
     </div>
 
@@ -96,7 +99,7 @@ const loging = async () => {
         <input type="checkbox" value="remember-me"> Remember me
       </label>
     </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    <button class="w-100 btn btn-lg btn-primary" @click="loging" >Sign in</button>
     <p class="mt-5 mb-3 text-body-secondary">&copy; iLoVeUIHaTeU</p>
   </form>
 </div>

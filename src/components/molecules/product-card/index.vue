@@ -8,6 +8,7 @@
         </div>
 
         <div class="product-card__info">
+            
             <h2 class="product-card__info__title">{{ product.title }}</h2>
             <div class="scroll">
                 <div class="product-card__info__desc">{{ product.description }}</div>
